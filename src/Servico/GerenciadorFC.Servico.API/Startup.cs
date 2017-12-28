@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace GerenciadorFC
+namespace GerenciadorFC.Servico.API
 {
     public class Startup
     {
