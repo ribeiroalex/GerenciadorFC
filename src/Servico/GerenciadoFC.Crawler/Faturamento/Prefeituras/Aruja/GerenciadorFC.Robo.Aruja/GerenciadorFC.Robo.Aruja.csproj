@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CancelaNfe.cs" />
+    <Compile Include="ConsultaNFe.cs" />
     <Compile Include="GeradorNfe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -65,6 +66,9 @@
       <Project>{9ceea235-8a28-42de-a2d4-e2e691163361}</Project>
       <Name>GerenciadorFC.Tomador</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NfePDF\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -19,17 +19,18 @@ namespace AppTeste
             var guarulhosNfe = new GerenciadorFC.Robo.Guarulhos.GeradorNfe();
             //var arujaNfe = new GerenciadorFC.Robo.Aruja.GeradorNfe();
             //var arujaCancel = new GerenciadorFC.Robo.Aruja.CancelaNfe();
+            var arujaConsulta = new GerenciadorFC.Robo.Aruja.ConsultaNFe();
 
-            tomador = AppTeste.Guarulhos.get_Tomador();
-            prestador = AppTeste.Guarulhos.get_Prestador();
+            //tomador = AppTeste.Guarulhos.get_Tomador();
+            //prestador = AppTeste.Guarulhos.get_Prestador();
 
-            //tomador = AppTeste.Aruja.get_Tomador();
-            //prestador = AppTeste.Aruja.get_Prestador();
+            tomador = AppTeste.Aruja.get_Tomador();
+            prestador = AppTeste.Aruja.get_Prestador();
 
-            Task.Run(() => guarulhosNfe.Emissor(prestador, tomador)).Wait();
+            //Task.Run(() => guarulhosNfe.Emissor(prestador, tomador)).Wait();
             //string nfe =  arujaNfe.Emissor(prestador, tomador);
 
-            // arujaCancel.Cancelar("39", prestador);
+            arujaConsulta.Consulta("40", prestador);
                        
 
         }
