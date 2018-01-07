@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Aruja.cs" />
     <Compile Include="Guarulhos.cs" />
+    <Compile Include="Itaquaquecetuba.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -71,6 +72,10 @@
     <ProjectReference Include="..\Faturamento\Tomador\GerenciadorFC.Tomador\GerenciadorFC.Tomador.csproj">
       <Project>{9ceea235-8a28-42de-a2d4-e2e691163361}</Project>
       <Name>GerenciadorFC.Tomador</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GerenciadorFC.Robo.Itaquaquecetuba\GerenciadorFC.Robo.Itaquaquecetuba.csproj">
+      <Project>{4904e083-08e4-426e-9a01-b6b30ac4d65a}</Project>
+      <Name>GerenciadorFC.Robo.Itaquaquecetuba</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
