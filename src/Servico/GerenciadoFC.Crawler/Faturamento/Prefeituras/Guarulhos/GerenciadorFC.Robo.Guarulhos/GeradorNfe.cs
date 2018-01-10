@@ -113,12 +113,17 @@ namespace GerenciadorFC.Robo.Guarulhos
             await Task.Delay(1000);
 
             driver.FindElement(By.XPath("//div[text()='" + tomador.Estado.ToUpper() + "']")).Click();
+            await Task.Delay(1000);
             estado.Click();
 
             var cidade = driver.FindElements(By.XPath("//label[text()='Cidade:']/ancestor::div[1]")).FirstOrDefault().FindElement(By.TagName("input"));
             cidade.Click();
-
             await Task.Delay(1000);
+
+            var divCidade = driver.FindElements(By.XPath("//div[text()='" + tomador.Cidade.ToUpper() + "']")).Where(x => x.Displayed).FirstOrDefault();
+            divCidade.Click();
+            await Task.Delay(1000);
+
 
             var logradouro = driver.FindElements(By.XPath("//label[text()='Logradouro:']/ancestor::div[1]")).FirstOrDefault().FindElement(By.TagName("input"));
             logradouro.SendKeys(tomador.Endereco);
@@ -141,6 +146,7 @@ namespace GerenciadorFC.Robo.Guarulhos
 
             var atividade = driver.FindElements(By.XPath("//label[text()='Código do Serviço/Atividade:']/ancestor::div[1]")).FirstOrDefault().FindElement(By.TagName("input"));
             atividade.Click();
+            await Task.Delay(0500);
 
              driver.FindElement(By.XPath("//div[text()='" + prestador.CodigoServico.ToUpper() + "']")).Click();
             await Task.Delay(1000);
@@ -152,11 +158,22 @@ namespace GerenciadorFC.Robo.Guarulhos
 
             var estado2 = driver.FindElements(By.XPath("//label[text()='Estado:']/ancestor::div[1]")).ElementAt(1).FindElement(By.TagName("input"));
             estado2.Click();
+            await Task.Delay(0500);
 
+            driver.FindElements(By.XPath("//div[text()='" + prestador.Estado.ToUpper() + "']")).ElementAt(2).Click(); ;
+            await Task.Delay(0500);
             estado2.Click();
 
+            var divCidadesSegundaPagina = driver.FindElements(By.XPath("//label[text()='Cidade:']/ancestor::div[1]")).Where(x => x.Displayed).FirstOrDefault();
 
+
+            var cidadesSegundaPagina = divCidadesSegundaPagina.FindElement(By.TagName("img"));
+            cidadesSegundaPagina.Click();
+            await Task.Delay(0500);
+
+            var cidadeClick = driver.FindElements(By.XPath("//div[text()='" + prestador.Cidade.ToUpper() + "']")).Where(x => x.Displayed).FirstOrDefault();
             cidadeClick.Click();
+            await Task.Delay(0500);
 
 
 
