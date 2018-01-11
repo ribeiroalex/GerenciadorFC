@@ -43,6 +43,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itaquaquecetuba", "Itaquaqu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorFC.Robo.Itaquaquecetuba", "GerenciadorFC.Robo.Itaquaquecetuba\GerenciadorFC.Robo.Itaquaquecetuba.csproj", "{4904E083-08E4-426E-9A01-B6B30AC4D65A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorFC.Robo.Receita.DAS", "GerenciadorFC.Robo.Receita.DAS\GerenciadorFC.Robo.Receita.DAS.csproj", "{FE6D77DA-114F-4976-8C3D-280C58AE7B12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{4904E083-08E4-426E-9A01-B6B30AC4D65A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4904E083-08E4-426E-9A01-B6B30AC4D65A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4904E083-08E4-426E-9A01-B6B30AC4D65A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE6D77DA-114F-4976-8C3D-280C58AE7B12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE6D77DA-114F-4976-8C3D-280C58AE7B12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE6D77DA-114F-4976-8C3D-280C58AE7B12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE6D77DA-114F-4976-8C3D-280C58AE7B12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,5 +105,6 @@ Global
 		{6158B3FE-9C06-4A9D-803B-AAB4F223AA7C} = {F65376B7-5C41-4DF2-A69D-5A51817F64A1}
 		{C27FE3FC-623C-440B-A411-41A0280ACCE2} = {588F5926-4A2A-41E6-980C-B9B8206839FD}
 		{4904E083-08E4-426E-9A01-B6B30AC4D65A} = {C27FE3FC-623C-440B-A411-41A0280ACCE2}
+		{FE6D77DA-114F-4976-8C3D-280C58AE7B12} = {C92C2AAA-0E1D-4D17-8F4E-8345E81CA56D}
 	EndGlobalSection
 EndGlobal

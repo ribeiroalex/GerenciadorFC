@@ -20,15 +20,15 @@ namespace AppTeste
             //var arujaNfe = new GerenciadorFC.Robo.Aruja.GeradorNfe();
             //var arujaCancel = new GerenciadorFC.Robo.Aruja.CancelaNfe();
             //var arujaConsulta = new GerenciadorFC.Robo.Aruja.ConsultaNFe();
-            var itaquaNfe = new GerenciadorFC.Robo.Itaquaquecetuba.ConsultaNfe();
+            //var itaquaNfe = new GerenciadorFC.Robo.Itaquaquecetuba.ConsultaNfe();
             //tomador = AppTeste.Guarulhos.get_Tomador();
             //prestador = AppTeste.Guarulhos.get_Prestador();
-
+            var saoPaulo = new GerenciadorFC.Robo.SaoPaulo.GeradorNfe();
             //tomador = AppTeste.Aruja.get_Tomador();
             //prestador = AppTeste.Aruja.get_Prestador();
 
-            tomador = AppTeste.Itaquaquecetuba.get_Tomador();
-            prestador = AppTeste.Itaquaquecetuba.get_Prestador();
+            tomador = AppTeste.SaoPaulo.get_Tomador();
+            prestador = AppTeste.SaoPaulo.get_Prestador();
 
             //Task.Run(() => guarulhosNfe.Emissor(prestador, tomador)).Wait();
             //string nfe =  arujaNfe.Emissor(prestador, tomador);
@@ -36,8 +36,8 @@ namespace AppTeste
             ///arujaConsulta.Consulta("40", prestador);
             ///
             ///itaquaNfe.Emissor(prestador, tomador);
-            itaquaNfe.Consulta("739", prestador);
-
+            //itaquaNfe.Consulta("739", prestador);
+            saoPaulo.Emissor(prestador, tomador);
 
 
         }
