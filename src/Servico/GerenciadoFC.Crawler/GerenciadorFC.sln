@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorFC.Robo.Itaquaqu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorFC.Robo.Receita.DAS", "GerenciadorFC.Robo.Receita.DAS\GerenciadorFC.Robo.Receita.DAS.csproj", "{FE6D77DA-114F-4976-8C3D-280C58AE7B12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorFC.Contribuinte", "GerenciadorFC.Contribuinte\GerenciadorFC.Contribuinte.csproj", "{4A0DEA60-EE12-46A6-BC86-62FBE26B69F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{FE6D77DA-114F-4976-8C3D-280C58AE7B12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE6D77DA-114F-4976-8C3D-280C58AE7B12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE6D77DA-114F-4976-8C3D-280C58AE7B12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A0DEA60-EE12-46A6-BC86-62FBE26B69F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A0DEA60-EE12-46A6-BC86-62FBE26B69F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A0DEA60-EE12-46A6-BC86-62FBE26B69F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A0DEA60-EE12-46A6-BC86-62FBE26B69F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -106,5 +112,6 @@ Global
 		{C27FE3FC-623C-440B-A411-41A0280ACCE2} = {588F5926-4A2A-41E6-980C-B9B8206839FD}
 		{4904E083-08E4-426E-9A01-B6B30AC4D65A} = {C27FE3FC-623C-440B-A411-41A0280ACCE2}
 		{FE6D77DA-114F-4976-8C3D-280C58AE7B12} = {C92C2AAA-0E1D-4D17-8F4E-8345E81CA56D}
+		{4A0DEA60-EE12-46A6-BC86-62FBE26B69F1} = {D776B497-87D0-43B6-B62A-CC728F54A992}
 	EndGlobalSection
 EndGlobal

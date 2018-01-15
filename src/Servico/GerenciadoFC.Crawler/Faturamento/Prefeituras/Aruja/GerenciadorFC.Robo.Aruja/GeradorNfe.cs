@@ -68,15 +68,17 @@ namespace GerenciadorFC.Robo.Aruja
             valor.Clear();
             valor.SendKeys(prestador.Valor.Replace(",","."));
 
-            var imposto = driver.FindElement(By.Id("qytotalimpostoaprox"));
-            imposto.SendKeys("0");
-
-            var aliquota = driver.FindElement(By.Id("qyaliquotaimpostoaprox"));
-            aliquota.SendKeys("0");
 
             System.Threading.Thread.Sleep(2000);
             driver.FindElement(By.Id("imagebutton1Imagem")).Click();
 
+
+            var imposto = driver.FindElement(By.Id("qytotalimpostoaprox"));
+            imposto.SendKeys("0,00");
+
+            var aliquota = driver.FindElement(By.Id("qyaliquotaimpostoaprox"));
+            aliquota.SendKeys("0");
+            
             System.Threading.Thread.Sleep(2000);             
             driver.FindElement(By.Id("imagebutton4Imagem")).Click();
 

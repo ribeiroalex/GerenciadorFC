@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GerenciadorFC.Prestador;
 using GerenciadorFC.Tomador;
-
+using GerenciadorFC.Contribuinte;
 
 
 namespace AppTeste
@@ -16,6 +16,11 @@ namespace AppTeste
         {
             var prestador = new Prestador();
             var tomador = new Tomador();
+            var contribuinte = new Contribuinte();
+            tomador = AppTeste.Aruja.get_Tomador();
+            prestador = AppTeste.Aruja.get_Prestador();
+            contribuinte = AppTeste.ReceitaDAS.get_contribuite();
+
             //var guarulhosNfe = new GerenciadorFC.Robo.Guarulhos.GeradorNfe();
             //var arujaNfe = new GerenciadorFC.Robo.Aruja.GeradorNfe();
             //var arujaCancel = new GerenciadorFC.Robo.Aruja.CancelaNfe();
@@ -23,22 +28,25 @@ namespace AppTeste
             //var itaquaNfe = new GerenciadorFC.Robo.Itaquaquecetuba.ConsultaNfe();
             //tomador = AppTeste.Guarulhos.get_Tomador();
             //prestador = AppTeste.Guarulhos.get_Prestador();
-            var saoPaulo = new GerenciadorFC.Robo.SaoPaulo.GeradorNfe();
+            //var saoPaulo = new GerenciadorFC.Robo.SaoPaulo.GeradorNfe();
             //tomador = AppTeste.Aruja.get_Tomador();
             //prestador = AppTeste.Aruja.get_Prestador();
 
-            tomador = AppTeste.SaoPaulo.get_Tomador();
-            prestador = AppTeste.SaoPaulo.get_Prestador();
+            var geraImposto = new GerenciadorFC.Robo.Receita.DAS.ReceitaDAS();
+
+            geraImposto.EmissorImpostos(contribuinte);
 
             //Task.Run(() => guarulhosNfe.Emissor(prestador, tomador)).Wait();
             //string nfe =  arujaNfe.Emissor(prestador, tomador);
 
-            ///arujaConsulta.Consulta("40", prestador);
+            //arujaNfe.Emissor(prestador, tomador);
+
+           // arujaConsulta.Consulta("43", prestador);
             ///
             ///itaquaNfe.Emissor(prestador, tomador);
             //itaquaNfe.Consulta("739", prestador);
-            saoPaulo.Emissor(prestador, tomador);
-
+            ///saoPaulo.Emissor(prestador, tomador);
+            //arujaCancel.Cancelar("43", prestador);
 
         }
     }

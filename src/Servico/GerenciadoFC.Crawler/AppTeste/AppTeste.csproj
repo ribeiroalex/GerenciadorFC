@@ -48,6 +48,7 @@
     <Compile Include="Itaquaquecetuba.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceitaDAS.cs" />
     <Compile Include="SaoPaulo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -74,9 +75,17 @@
       <Project>{9ceea235-8a28-42de-a2d4-e2e691163361}</Project>
       <Name>GerenciadorFC.Tomador</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GerenciadorFC.Contribuinte\GerenciadorFC.Contribuinte.csproj">
+      <Project>{4a0dea60-ee12-46a6-bc86-62fbe26b69f1}</Project>
+      <Name>GerenciadorFC.Contribuinte</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GerenciadorFC.Robo.Itaquaquecetuba\GerenciadorFC.Robo.Itaquaquecetuba.csproj">
       <Project>{4904e083-08e4-426e-9a01-b6b30ac4d65a}</Project>
       <Name>GerenciadorFC.Robo.Itaquaquecetuba</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GerenciadorFC.Robo.Receita.DAS\GerenciadorFC.Robo.Receita.DAS.csproj">
+      <Project>{fe6d77da-114f-4976-8c3d-280c58ae7b12}</Project>
+      <Name>GerenciadorFC.Robo.Receita.DAS</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
