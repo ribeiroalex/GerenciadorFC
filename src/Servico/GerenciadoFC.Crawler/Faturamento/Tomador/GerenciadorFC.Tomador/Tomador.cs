@@ -15,7 +15,6 @@ namespace GerenciadorFC.Tomador
         public string Endereco { get; set; }
         public string Cidade { get; set; }
         public string UF { get; set; }
-        public string Estado { get; set; }
         public string Email { get; set; }
         public string TipoPessoa { get; set; }
         public string Numero { get; set; }

@@ -19,11 +19,9 @@ namespace AppTeste
             tomador.Fantasia = "";
             tomador.TipoPessoa = "PJ";
             tomador.UF = "SP";
-            tomador.Estado = "SAO PAULO";
             tomador.Numero = "337";
             tomador.Bairro = "CERQUEIRA CÉSAR";
-            tomador.CEP = "01414001";
-            tomador.Complemento = "";
+            tomador.CEP = "01414-001";
 
             return tomador;
         }
@@ -42,7 +40,7 @@ namespace AppTeste
             prestador.Estado = "SAO PAULO";
             prestador.Tipo = "PJ";
             prestador.Cidade = "GUARULHOS";
-            prestador.CodigoServico = "1.02/620230001";
+            prestador.CodigoServico = "1.01 / 722900001";
             prestador.Discriminacao = "Serviço de desenvolvimento de software Valor de : R$ 100,00 ";
             prestador.UlrLogin = "http://guarulhos.ginfes.com.br/";
             prestador.Email = "fabioesimoes@gmail.com";

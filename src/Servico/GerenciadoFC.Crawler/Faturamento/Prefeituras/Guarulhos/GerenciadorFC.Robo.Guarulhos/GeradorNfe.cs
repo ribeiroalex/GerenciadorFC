@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
-using System.Linq;
 using OpenQA.Selenium.Chrome;
-
-
+using OpenQA.Selenium.Support;
+using OpenQA.Selenium.Support.UI;
 
 namespace GerenciadorFC.Robo.Guarulhos
 {
@@ -13,36 +15,33 @@ namespace GerenciadorFC.Robo.Guarulhos
         public async Task<bool> Emissor(GerenciadorFC.Prestador.Prestador prestador, GerenciadorFC.Tomador.Tomador tomador)
         {
             bool emissor = false;
-#pragma warning disable CS0618 // O tipo ou membro é obsoleto
-            IWebDriver driver = new ChromeDriver(@"C:\Users\Financeiro\Documents\Alex"); // new RemoteWebDriver(new  Uri( "http://localhost:9515"), DesiredCapabilities.Chrome());
-#pragma warning restore CS0618 // O tipo ou membro é obsoleto
+            IWebDriver driver = new ChromeDriver(@"C:\Users\fabio\.nuget\packages\Selenium.Chrome.WebDriver\2.33.0\driver");
             driver.Navigate().GoToUrl(prestador.UlrLogin);
 
-            await Task.Delay(5000);
-
+            await Task.Delay(4000);
+            
+            driver.FindElement(By.Id("ext-gen18")).Click();
+            await Task.Delay(4000);
             driver.FindElement(By.ClassName("x-btn-text")).Click();
-            await Task.Delay(5000);
-            driver.FindElement(By.ClassName("x-btn-text")).Click();
-            await Task.Delay(5000);
+            await Task.Delay(4000);
             driver.FindElement(By.ClassName("imagem1")).Click();
-            await Task.Delay(2000);
-            var inscr = driver.FindElement(By.CssSelector("input[value='on']"));
+
+            var inscr = driver.FindElement(By.Id("gwt-uid-3"));
             inscr.Click();
             await Task.Delay(4000);
-            var findBy = By.CssSelector("input[class*='x-form-text x-form-field x-form-num-field']");
-            var incricao = driver.FindElement(findBy);
+            var incricao = driver.FindElement(By.Id("ext-gen108"));
             incricao.SendKeys(prestador.Usuario);
-            var senha = driver.FindElement(By.CssSelector("input[type='password']"));
+            var senha = driver.FindElement(By.Id("ext-gen110"));
             senha.SendKeys(prestador.Senha);
-            driver.FindElements(By.ClassName("x-btn-text")).FirstOrDefault().Click();
+            driver.FindElement(By.Id("ext-gen119")).Click();
             await Task.Delay(4000);
             var imagem = driver.FindElement(By.XPath("//img[@src='imgs/icon_nfse3.gif']"));
-
-            if (imagem != null)
+             
+            if(imagem != null)
             {
                 imagem.Click();
             }
-            var cssSELECTOR = "input[class*=' x-form-text x-form-field x-combo-noedit ']";
+            var cssSELECTOR = "input[class='x-form-field-wrap x-trigger-wrap-focus']";
 
             try
             {
@@ -50,20 +49,19 @@ namespace GerenciadorFC.Robo.Guarulhos
             }
             catch (Exception ex)
             {
-
+                
             }
             var comboTipoPessoa = driver.FindElement(By.CssSelector(cssSELECTOR));
-            await Task.Delay(2000);
-            if (comboTipoPessoa != null)
+
+            if(comboTipoPessoa != null)
             {
                 //comboTipoPessoa.Click();
                 //var select_tipo = new SelectElement(tipo);
-                comboTipoPessoa.Click();
                 if (prestador.Tipo == "PJ")
                 {
                     //select_tipo.SelectByText("");
 
-                    var pessoaJuridica = driver.FindElement(By.CssSelector(".x-combo-list-inner div[alt*='Pessoa Jurídica Direito Privado']"));
+                    var pessoaJuridica = driver.FindElement(By.ClassName("x-combo-selected"));
 
                     if (pessoaJuridica != null)
                     {
@@ -73,111 +71,38 @@ namespace GerenciadorFC.Robo.Guarulhos
                 }
                 else
                 {
-                    var pessoaFisica = driver.FindElement(By.CssSelector(".x-combo-list-inner div[alt*='Pessoa Física']"));
-
-
-                    if (pessoaFisica != null)
-                    {
-                        pessoaFisica.Click();
-
-                    }
+                    driver.FindElement(By.Id("ext-gen1126")).Click();
                 }
             }
-
-
+            
+           
             ///select_tipo.SelectByText("");
             // tipo.Click();
             await Task.Delay(4000);
+            var razao = driver.FindElement(By.Id("ext-gen413"));
+            razao.SendKeys(prestador.RazaoSocial);
+            var cnpj = driver.FindElement(By.Id("ext-gen453"));
+            cnpj.SendKeys(prestador.Documento);
+            var inscricao = driver.FindElement(By.Id("ext-gen457"));
+            incricao.SendKeys(prestador.InscricaoMunicipal);
+            var cep = driver.FindElement(By.Id("ext-gen459"));
+            cep.SendKeys(prestador.CEP);
+            var estado = driver.FindElement(By.Id("ext-gen485"));
+            estado.SendKeys(prestador.Estado.ToUpper());
+            var cidade = driver.FindElement(By.Id("ext-gen487"));
+            cidade.SendKeys(prestador.Cidade.ToUpper());
+            var logradouro = driver.FindElement(By.Id("ext-gen469"));
+            logradouro.SendKeys(prestador.Endereco);
+            var numero = driver.FindElement(By.Id("ext-gen471"));
+            numero.SendKeys(prestador.Numero);
+            var bairro = driver.FindElement(By.Id("ext-gen473"));
+            bairro.SendKeys(prestador.Bairro);
+            var complemento = driver.FindElement(By.Id("ext-gen475"));
+            complemento.SendKeys(prestador.Complemento);
+            var email = driver.FindElement(By.Id("ext-gen477"));
+            email.SendKeys(prestador.Email);
+            driver.FindElement(By.Id("ext-gen440")).Click();
 
-
-            //PreencheFormulario
-            string razaoSocialPath = string.Empty;
-            razaoSocialPath = "//div[label/@text='Razão Social:']";
-
-            var razao = driver.FindElements(By.XPath("//label[text()='Razão Social:']/ancestor::div[1]")).FirstOrDefault().FindElement(By.TagName("input"));
-            razao.SendKeys(tomador.RazaoSocial);
-
-
-            //var razao = driver.FindElement(By.CssSelector("div label[text=]"));
-            //razao.SendKeys(tomador.RazaoSocial);
-
-            var cnpj = driver.FindElements(By.XPath("//label[text()='CNPJ:']/ancestor::div[1]")).FirstOrDefault().FindElement(By.TagName("input"));
-            cnpj.SendKeys(tomador.Documento);
-            //var inscricao = driver.FindElements(By.XPath("//label[text()='Inscrição Municipal:']/ancestor::div[1]")).FirstOrDefault().FindElement(By.TagName("input"));
-            //incricao.SendKeys(tomador.InscricaoMunicipal);
-
-            var cep = driver.FindElements(By.XPath("//label[text()='CEP:']/ancestor::div[1]")).FirstOrDefault().FindElement(By.TagName("input"));
-            cep.SendKeys(tomador.CEP);
-            var estado = driver.FindElements(By.XPath("//label[text()='Estado:']/ancestor::div[1]")).FirstOrDefault().FindElement(By.TagName("input"));
-            estado.Click();
-            await Task.Delay(1000);
-
-            driver.FindElement(By.XPath("//div[text()='" + tomador.Estado.ToUpper() + "']")).Click();
-            await Task.Delay(1000);
-            estado.Click();
-
-            var cidade = driver.FindElements(By.XPath("//label[text()='Cidade:']/ancestor::div[1]")).FirstOrDefault().FindElement(By.TagName("input"));
-            cidade.Click();
-            await Task.Delay(1000);
-
-            var divCidade = driver.FindElements(By.XPath("//div[text()='" + tomador.Cidade.ToUpper() + "']")).Where(x => x.Displayed).FirstOrDefault();
-            divCidade.Click();
-            await Task.Delay(1000);
-
-
-            var logradouro = driver.FindElements(By.XPath("//label[text()='Logradouro:']/ancestor::div[1]")).FirstOrDefault().FindElement(By.TagName("input"));
-            logradouro.SendKeys(tomador.Endereco);
-
-            var numero = driver.FindElements(By.XPath("//label[text()='Número:']/ancestor::div[1]")).FirstOrDefault().FindElement(By.TagName("input"));
-            numero.SendKeys(tomador.Numero);
-
-            var bairro = driver.FindElements(By.XPath("//label[text()='Bairro:']/ancestor::div[1]")).FirstOrDefault().FindElement(By.TagName("input"));
-            bairro.SendKeys(tomador.Bairro);
-
-            var complemento = driver.FindElements(By.XPath("//label[text()='Complemento:']/ancestor::div[1]")).FirstOrDefault().FindElement(By.TagName("input"));
-            complemento.SendKeys(tomador.Complemento);
-
-            var email = driver.FindElements(By.XPath("//label[text()='E-mail:']/ancestor::div[1]")).FirstOrDefault().FindElement(By.TagName("input"));
-            email.SendKeys(tomador.Email);
-
-
-            driver.FindElement(By.XPath("//button[contains(text(),'Próximo')]")).Click();
-
-
-            var atividade = driver.FindElements(By.XPath("//label[text()='Código do Serviço/Atividade:']/ancestor::div[1]")).FirstOrDefault().FindElement(By.TagName("input"));
-            atividade.Click();
-            await Task.Delay(0500);
-
-             driver.FindElement(By.XPath("//div[text()='" + prestador.CodigoServico.ToUpper() + "']")).Click();
-            await Task.Delay(1000);
-
-            var valorServico = driver.FindElements(By.XPath("//label[contains(text(), 'Valor do serviço prestado:')]/ancestor::div[1]")).FirstOrDefault().FindElement(By.TagName("input")); 
-            valorServico.SendKeys(prestador.Valor);
-
-
-
-            var estado2 = driver.FindElements(By.XPath("//label[text()='Estado:']/ancestor::div[1]")).ElementAt(1).FindElement(By.TagName("input"));
-            estado2.Click();
-            await Task.Delay(0500);
-
-            driver.FindElements(By.XPath("//div[text()='" + prestador.Estado.ToUpper() + "']")).ElementAt(2).Click(); ;
-            await Task.Delay(0500);
-            estado2.Click();
-
-            var divCidadesSegundaPagina = driver.FindElements(By.XPath("//label[text()='Cidade:']/ancestor::div[1]")).Where(x => x.Displayed).FirstOrDefault();
-
-
-            var cidadesSegundaPagina = divCidadesSegundaPagina.FindElement(By.TagName("img"));
-            cidadesSegundaPagina.Click();
-            await Task.Delay(0500);
-
-            var cidadeClick = driver.FindElements(By.XPath("//div[text()='" + prestador.Cidade.ToUpper() + "']")).Where(x => x.Displayed).FirstOrDefault();
-            cidadeClick.Click();
-            await Task.Delay(0500);
-
-
-
-            driver.FindElement(By.XPath("//button[contains(text(),'Emitir')]")).Click();
 
             return emissor;
         }
