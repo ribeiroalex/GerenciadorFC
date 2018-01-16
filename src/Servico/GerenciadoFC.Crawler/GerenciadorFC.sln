@@ -73,6 +73,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorFC.Crawler.Domin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorFC.Monitor.DashBoard", "GerenciadorFC.Monitor.DashBoard\GerenciadorFC.Monitor.DashBoard.csproj", "{480EF147-E807-4F5A-8B3A-7A74C00757F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anticaptcha_example", "antiCaptcha\Anticaptcha_example.csproj", "{6AC922D4-0549-44BA-80E3-9B3FEDAB10AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -123,6 +125,10 @@ Global
 		{480EF147-E807-4F5A-8B3A-7A74C00757F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{480EF147-E807-4F5A-8B3A-7A74C00757F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{480EF147-E807-4F5A-8B3A-7A74C00757F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AC922D4-0549-44BA-80E3-9B3FEDAB10AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AC922D4-0549-44BA-80E3-9B3FEDAB10AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AC922D4-0549-44BA-80E3-9B3FEDAB10AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AC922D4-0549-44BA-80E3-9B3FEDAB10AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -159,6 +165,7 @@ Global
 		{5D8F3564-22B9-40FF-BDCB-EADFCB3CF81D} = {588F5926-4A2A-41E6-980C-B9B8206839FD}
 		{45AC224E-ECAE-43BA-B1E8-4667297E2823} = {5D8F3564-22B9-40FF-BDCB-EADFCB3CF81D}
 		{480EF147-E807-4F5A-8B3A-7A74C00757F2} = {13407935-C68C-454B-8BB5-064F560271D0}
+		{6AC922D4-0549-44BA-80E3-9B3FEDAB10AF} = {C2C9935D-7991-4470-829F-06E9A547A88F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1641E9A8-4CBC-41A9-A86A-6BEE947C9E9E}

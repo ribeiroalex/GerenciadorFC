@@ -14,9 +14,10 @@ namespace AppTeste
     {
         static void Main(string[] args)
         {
-            var prestador = new Prestador();
-            var tomador = new Tomador();
-            var guarulhosNfe = new GerenciadorFC.Robo.Guarulhos.GeradorNfe();
+            var receita = new GerenciadorFC.Robo.SaoPaulo.GeradorNfe();
+            //var prestador = new Prestador();
+            //var tomador = new Tomador();
+            //var guarulhosNfe = new GerenciadorFC.Robo.Guarulhos.GeradorNfe();
             //var arujaNfe = new GerenciadorFC.Robo.Aruja.GeradorNfe();
             //var arujaCancel = new GerenciadorFC.Robo.Aruja.CancelaNfe();
             //var arujaConsulta = new GerenciadorFC.Robo.Aruja.ConsultaNFe();
@@ -27,10 +28,11 @@ namespace AppTeste
             //tomador = AppTeste.Aruja.get_Tomador();
             //prestador = AppTeste.Aruja.get_Prestador();
 
-            tomador = AppTeste.Guarulhos.get_Tomador();
-            prestador = AppTeste.Guarulhos.get_Prestador();
+            //tomador = AppTeste.Guarulhos.get_Tomador();
+            //prestador = AppTeste.Guarulhos.get_Prestador();
 
-            Task.Run(() => guarulhosNfe.Emissor(prestador, tomador)).Wait();
+            //Task.Run(() => guarulhosNfe.Emissor(prestador, tomador)).Wait();
+            Task.Run(() => receita.AcessarReceita()).Wait();
             //string nfe =  arujaNfe.Emissor(prestador, tomador);
 
             ///arujaConsulta.Consulta("40", prestador);
