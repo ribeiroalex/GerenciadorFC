@@ -49,12 +49,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AntiGate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReceitaDAS.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GerenciadorFC.Contribuinte\GerenciadorFC.Contribuinte.csproj">

@@ -28,9 +28,9 @@ namespace GerenciadorFC.Robo.Receita.DAS
             var element = driver.FindElement(By.Id("captcha-img"));
             string imageSrc = element.GetAttribute("src");
 
-            var teste = AntiGate.GetBalance(contribuite.CodigoAntiCaptcha);
+            //var teste = AntiGate.GetBalance(contribuite.CodigoAntiCaptcha);
 
-            var captcha =  AntiGate.Recognize(imageSrc,null,0,0,false,false,false,false,false,contribuite.CodigoAntiCaptcha);
+            //var captcha =  AntiGate.Recognize(imageSrc,null,0,0,false,false,false,false,false,contribuite.CodigoAntiCaptcha);
 
 
         } 
