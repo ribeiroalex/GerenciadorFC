@@ -21,10 +21,10 @@ namespace AppTeste
 
             //var prestador = new Prestador();
             //var tomador = new Tomador();
-            //var contribuinte = new Contribuinte();
+            var contribuinte = new Contribuinte();
             //tomador = AppTeste.Aruja.get_Tomador();
             //prestador = AppTeste.Aruja.get_Prestador();
-            //contribuinte = AppTeste.ReceitaDAS.get_contribuite();
+            contribuinte = AppTeste.ReceitaDAS.get_contribuite();
 
             //var guarulhosNfe = new GerenciadorFC.Robo.Guarulhos.GeradorNfe();
             //var arujaNfe = new GerenciadorFC.Robo.Aruja.GeradorNfe();
@@ -33,7 +33,7 @@ namespace AppTeste
             //var itaquaNfe = new GerenciadorFC.Robo.Itaquaquecetuba.ConsultaNfe();
             //tomador = AppTeste.Guarulhos.get_Tomador();
             //prestador = AppTeste.Guarulhos.get_Prestador();
-            var saoPaulo = new GerenciadorFC.Robo.SaoPaulo.GeradorNfe();
+           /// var saoPaulo = new GerenciadorFC.Robo.SaoPaulo.GeradorNfe();
             //tomador = AppTeste.Aruja.get_Tomador();
             //prestador = AppTeste.Aruja.get_Prestador();
 
@@ -41,11 +41,11 @@ namespace AppTeste
             //prestador = AppTeste.Guarulhos.get_Prestador();
 
             //Task.Run(() => guarulhosNfe.Emissor(prestador, tomador)).Wait();
-            Task.Run(() => saoPaulo.AcessarReceita()).Wait();
+            //Task.Run(() => saoPaulo.AcessarReceita()).Wait();
             //Task.Run(() => receita.AcessarReceita()).Wait();
-            //var geraImposto = new GerenciadorFC.Robo.Receita.DAS.ReceitaDAS();
+            var geraImposto = new GerenciadorFC.Robo.Receita.DAS.ReceitaDAS();
 
-            //geraImposto.EmissorImpostos(contribuinte);
+            geraImposto.EmissorImpostos(contribuinte);
 
             //Task.Run(() => guarulhosNfe.Emissor(prestador, tomador)).Wait();
             //string nfe =  arujaNfe.Emissor(prestador, tomador);

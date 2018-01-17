@@ -13,8 +13,7 @@ namespace GerenciadorFC.Robo.SaoPaulo
 
         public async Task AcessarReceita()
         {
-            IWebDriver driver = new ChromeDriver(@"C:\Users\Financeiro\Documents\Alex"); // new RemoteWebDriver(new  Uri( "http://localhost:9515"), DesiredCapabilities.Chrome());
-#pragma warning restore CS0618 // O tipo ou membro é obsoleto
+            IWebDriver driver = new ChromeDriver(@"C:\Users\Financeiro\Documents\Alex"); // new RemoteWebDriver(new  Uri( "http://localhost:9515"), DesiredCapabilities.Chrome());#pragma warning restore CS0618 // O tipo ou membro é obsoleto
             driver.Navigate().GoToUrl("https://www8.receita.fazenda.gov.br/SimplesNacional/controleAcesso/Autentica.aspx?id=6");
             await Task.Delay(1000);
 

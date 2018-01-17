@@ -4,7 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome; 
+using OpenQA.Selenium.Chrome;
+using Anticaptcha_example.Api;
+using Anticaptcha_example.Helper;
+using System.IO;
 
 namespace GerenciadorFC.Robo.Receita.DAS
 {
@@ -25,14 +28,65 @@ namespace GerenciadorFC.Robo.Receita.DAS
             var codigo = driver.FindElement(By.Id("ctl00_ContentPlaceHolder_txtCodigoAcesso"));
             codigo.SendKeys(contribuite.Codigo);
 
-            var element = driver.FindElement(By.Id("captcha-img"));
-            string imageSrc = element.GetAttribute("src");
+            var captchaObject = driver.FindElement(By.Id("captcha-img"));
+            var captchaSRC = captchaObject.GetAttribute("src");
+            var directory = AppDomain.CurrentDomain.BaseDirectory;
 
-            //var teste = AntiGate.GetBalance(contribuite.CodigoAntiCaptcha);
+            string[] imgsrcList = captchaSRC.Split(',');
+            var filePath = string.Format("{0}\\captcha.png", directory);
 
-            //var captcha =  AntiGate.Recognize(imageSrc,null,0,0,false,false,false,false,false,contribuite.CodigoAntiCaptcha);
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
 
+            using (var stream = new FileStream(filePath, FileMode.CreateNew))
+            using (var binatyStream = new BinaryWriter(stream))
+            {
+                byte[] base64Array = Convert.FromBase64String(imgsrcList[1]);
 
-        } 
+                binatyStream.Write(base64Array);
+            }
+
+            var captchaText = ReadImage(filePath, contribuite.CodigoAntiCaptcha);
+
+            var captchaInputText = driver.FindElement(By.Id("txtTexto_captcha_serpro_gov_br"));
+
+            captchaInputText.SendKeys(captchaText);
+
+            driver.FindElement(By.Id("ctl00_ContentPlaceHolder_btContinuar")).Click();
+
+            var pendencia = driver.FindElement(By.XPath("//*[@id='pFrameASN']/div[2]/a"));
+            if (pendencia != null)
+                pendencia.Click();
+            driver.FindElement(By.Id("//li[contains(., 'Calcular valor devido')]")).Click();
+        }
+        public string ReadImage(string filepath, string apiKey)
+        {
+            string captchaText = string.Empty;
+
+            var api = new ImageToText
+            {
+                ClientKey = apiKey,
+                FilePath = filepath
+            };
+
+            if (!api.CreateTask())
+            {
+                Console.WriteLine("API v2 send failed. " + api.ErrorMessage ?? "", DebugHelper.Type.Error);
+            }
+            else if (!api.WaitForResult())
+            {
+                DebugHelper.Out("Could not solve the captcha.", DebugHelper.Type.Error);
+            }
+            else
+            {
+                captchaText = api.GetTaskSolution();
+
+                DebugHelper.Out("Result: " + captchaText, DebugHelper.Type.Success);
+            }
+
+            return captchaText;
+        }
     }
 }

@@ -58,6 +58,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\antiCaptcha\Anticaptcha_example.csproj">
+      <Project>{6ac922d4-0549-44ba-80e3-9b3fedab10af}</Project>
+      <Name>Anticaptcha_example</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GerenciadorFC.Contribuinte\GerenciadorFC.Contribuinte.csproj">
       <Project>{4a0dea60-ee12-46a6-bc86-62fbe26b69f1}</Project>
       <Name>GerenciadorFC.Contribuinte</Name>
