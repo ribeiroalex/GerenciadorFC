@@ -68,33 +68,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Faturamento\Prefeituras\Aruja\GerenciadorFC.Robo.Aruja\GerenciadorFC.Robo.Aruja.csproj">
-      <Project>{6158b3fe-9c06-4a9d-803b-aab4f223aa7c}</Project>
-      <Name>GerenciadorFC.Robo.Aruja</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Faturamento\Prefeituras\Guarulhos\GerenciadorFC.Robo.Guarulhos\GerenciadorFC.Robo.Guarulhos.csproj">
-      <Project>{af869e8c-fe7e-4ef1-ac7e-be831303296c}</Project>
-      <Name>GerenciadorFC.Robo.Guarulhos</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Faturamento\Prefeituras\SaoPaulo\GerenciadorFC.Robo.SaoPaulo\GerenciadorFC.Robo.SaoPaulo.csproj">
       <Project>{130eec91-49ef-49b4-9775-10e6b6eb8504}</Project>
       <Name>GerenciadorFC.Robo.SaoPaulo</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Faturamento\Prestador\GerenciadorFC.Prestador\GerenciadorFC.Prestador.csproj">
-      <Project>{838d8ff5-cb3e-4440-ba6c-057babe1d8b4}</Project>
-      <Name>GerenciadorFC.Prestador</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Faturamento\Tomador\GerenciadorFC.Tomador\GerenciadorFC.Tomador.csproj">
-      <Project>{9ceea235-8a28-42de-a2d4-e2e691163361}</Project>
-      <Name>GerenciadorFC.Tomador</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GerenciadorFC.Contribuinte\GerenciadorFC.Contribuinte.csproj">
       <Project>{4a0dea60-ee12-46a6-bc86-62fbe26b69f1}</Project>
       <Name>GerenciadorFC.Contribuinte</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GerenciadorFC.Robo.Itaquaquecetuba\GerenciadorFC.Robo.Itaquaquecetuba.csproj">
-      <Project>{4904e083-08e4-426e-9a01-b6b30ac4d65a}</Project>
-      <Name>GerenciadorFC.Robo.Itaquaquecetuba</Name>
     </ProjectReference>
     <ProjectReference Include="..\GerenciadorFC.Robo.Receita.DAS\GerenciadorFC.Robo.Receita.DAS.csproj">
       <Project>{fe6d77da-114f-4976-8c3d-280c58ae7b12}</Project>

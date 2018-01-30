@@ -58,14 +58,6 @@
       <Project>{6AC922D4-0549-44BA-80E3-9B3FEDAB10AF}</Project>
       <Name>Anticaptcha_example</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Prestador\GerenciadorFC.Prestador\GerenciadorFC.Prestador.csproj">
-      <Project>{838d8ff5-cb3e-4440-ba6c-057babe1d8b4}</Project>
-      <Name>GerenciadorFC.Prestador</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Tomador\GerenciadorFC.Tomador\GerenciadorFC.Tomador.csproj">
-      <Project>{9ceea235-8a28-42de-a2d4-e2e691163361}</Project>
-      <Name>GerenciadorFC.Tomador</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
