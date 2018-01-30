@@ -12,7 +12,7 @@ namespace AppTeste
         {
             var tomador = new GerenciadorFC.Tomador.Tomador();
             tomador.Email = "fabioesimoes@gmail.com";
-            tomador.Documento = "07.986.975/0001-80";
+            tomador.Documento = "07986975000180";
             tomador.Cidade = "SAO PAULO";
             tomador.Endereco = "RUA HADDOCK LOBO";
             tomador.RazaoSocial = "TECH FOR PARTICIPAÇÕES & SISTEMAS EM TECNOLOGIA DA INFORMAÇÃO LTDA";
@@ -34,7 +34,7 @@ namespace AppTeste
             prestador.RazaoSocial = "ERIVELTO SOLUCOES E TECNOLOGIAS EIRELI ME";
             prestador.Fantasia = "ERIVELTO SOLUCOES E TECNOLOGIAS";
             prestador.Endereco = "RUA GAGO COUTINHO ,354 - JARDIM VILA GALVÃO CEP: 07055-030";
-            prestador.Documento = "27.308.027/0001-00";
+            prestador.Documento = "27308027000100";
             prestador.InscricaoMunicipal = "293161";
             prestador.UF = "SP";
             prestador.Estado = "SAO PAULO";

@@ -16,7 +16,8 @@ namespace AppTeste
             contribuite.Codigo = "918126119242";
             contribuite.Url = "http://www8.receita.fazenda.gov.br/simplesnacional/controleacesso/autentica.aspx?id=6";
             contribuite.CodigoAntiCaptcha = "28f9d569983d49004ef89bf3735f919c";
-
+            contribuite.mesApuracao = "12";
+            contribuite.anoApuracao = "2017";
             return contribuite;
         }
     }

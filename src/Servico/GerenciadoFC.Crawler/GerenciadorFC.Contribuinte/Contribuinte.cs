@@ -16,5 +16,8 @@ namespace GerenciadorFC.Contribuinte
         public string Anexo { get; set; }
         public string Url { get; set; }
         public string CodigoAntiCaptcha { get; set; }
+        public string mesApuracao { get; set; }
+        public string anoApuracao { get; set; }
+        public string Email { get; set; }
     }
 }

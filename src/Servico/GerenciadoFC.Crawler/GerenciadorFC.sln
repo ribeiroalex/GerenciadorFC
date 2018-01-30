@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Faturamento", "Faturamento", "{6A7813CE-2B6B-44E1-AF45-5B23616637E1}"
 EndProject
@@ -79,6 +79,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anticaptcha_example", "anti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorFC.Robo.SaoPaulo", "Faturamento\Prefeituras\SaoPaulo\GerenciadorFC.Robo.SaoPaulo\GerenciadorFC.Robo.SaoPaulo.csproj", "{130EEC91-49EF-49B4-9775-10E6B6EB8504}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositorio", "Repositorio", "{1CB2F497-B14A-4286-86AE-5FF09B70D0DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorFC.Repositorio", "GerenciadorFC.Repositorio\GerenciadorFC.Repositorio.csproj", "{FB9396AC-F00A-41DF-9708-50DD56D9D161}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +145,10 @@ Global
 		{130EEC91-49EF-49B4-9775-10E6B6EB8504}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{130EEC91-49EF-49B4-9775-10E6B6EB8504}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{130EEC91-49EF-49B4-9775-10E6B6EB8504}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB9396AC-F00A-41DF-9708-50DD56D9D161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB9396AC-F00A-41DF-9708-50DD56D9D161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB9396AC-F00A-41DF-9708-50DD56D9D161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB9396AC-F00A-41DF-9708-50DD56D9D161}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -180,6 +188,7 @@ Global
 		{480EF147-E807-4F5A-8B3A-7A74C00757F2} = {13407935-C68C-454B-8BB5-064F560271D0}
 		{6AC922D4-0549-44BA-80E3-9B3FEDAB10AF} = {C2C9935D-7991-4470-829F-06E9A547A88F}
 		{130EEC91-49EF-49B4-9775-10E6B6EB8504} = {FD5F1903-24C2-4EAF-8F44-5F6871129909}
+		{FB9396AC-F00A-41DF-9708-50DD56D9D161} = {1CB2F497-B14A-4286-86AE-5FF09B70D0DD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1641E9A8-4CBC-41A9-A86A-6BEE947C9E9E}
