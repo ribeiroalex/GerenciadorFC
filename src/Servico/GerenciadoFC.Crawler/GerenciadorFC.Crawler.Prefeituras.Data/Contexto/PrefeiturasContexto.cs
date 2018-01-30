@@ -29,7 +29,7 @@ namespace GerenciadorFC.Crawler.Prefeituras.Data.Contexto
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Configurations.Add(new TomadorMap());
-            modelBuilder.Configurations.Add(new PrestadorMap());
+            //modelBuilder.Configurations.Add(new PrestadorMap());
 
         }
 
