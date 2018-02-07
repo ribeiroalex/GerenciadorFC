@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="6.10.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\GerenciatorFC.Clientes.Dominio.csproj" />
+    <ProjectReference Include="..\GerenciadorFC.Contextos.Nucleo.Infra.Data\GerenciadorFC.Contextos.Nucleo.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>

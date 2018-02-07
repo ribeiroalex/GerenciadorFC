@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>GerenciatorFC.Clientes.Dominio</AssemblyName>
+    <RootNamespace>GerenciatorFC.Clientes.Dominio</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GerenciadorFC.Contextos.Nucleo.Infra.CrossCutting\GerenciadorFC.Contextos.Nucleo.Infra.CrossCutting.csproj" />
+    <ProjectReference Include="..\GerenciadorFC.Contextos.Nucleo.Infra.Data\GerenciadorFC.Contextos.Nucleo.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>
