@@ -13,11 +13,23 @@ namespace AppTeste
             var contribuite = new GerenciadorFC.Contribuinte.Contribuinte();
             contribuite.CNPJ = "27308027000100";
             contribuite.CPF = "27952666878";
-            contribuite.Codigo = "918126119242";
-            contribuite.Url = "http://www8.receita.fazenda.gov.br/simplesnacional/controleacesso/autentica.aspx?id=6";
+            contribuite.CodigoContribuite = "918126119242";
+            contribuite.Url = "https://www8.receita.fazenda.gov.br/SimplesNacional/controleAcesso/Autentica.aspx?id=60";
             contribuite.CodigoAntiCaptcha = "28f9d569983d49004ef89bf3735f919c";
-            contribuite.mesApuracao = "12";
-            contribuite.anoApuracao = "2017";
+            contribuite.mesApuracao = "01";
+            contribuite.anoApuracao = "2018";
+            contribuite.ValorTributado = "8.500,00";
+
+            var anexo = new GerenciadorFC.Contribuinte.AnexoContribuinte();
+
+            List<GerenciadorFC.Contribuinte.AnexoContribuinte> listaAnexo = new List<GerenciadorFC.Contribuinte.AnexoContribuinte>();
+
+            anexo.Anexo = "Não sujeitos ao fator “r” e tributados pelo Anexo III, sem retenção/substituição tributária de ISS, com ISS devido ao próprio Município do estabelecimento";
+
+            listaAnexo.Add(anexo);
+
+            contribuite.Anexo = listaAnexo;
+            
             return contribuite;
         }
     }
