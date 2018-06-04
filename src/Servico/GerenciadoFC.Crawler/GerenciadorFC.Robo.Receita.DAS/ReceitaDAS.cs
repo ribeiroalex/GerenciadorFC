@@ -120,29 +120,32 @@ namespace GerenciadorFC.Robo.Receita.DAS
             System.Threading.Thread.Sleep(3000);
             driver.Quit();
 
-            MailMessage mail = new MailMessage();
-            
-            mail.From = new MailAddress("fabioesimoes@outlook.com");
-            mail.To.Add("aleribeiro@outlook.com");
-            mail.To.Add("fabioesimoes@gmail.com");
-            mail.To.Add("gilvan@asctbinf.com");
+            if (contribuite.ValorTributado != "0,00")
+            {
+                MailMessage mail = new MailMessage();
 
-            //define o conteúdo
-            mail.Subject = "Envio de DAS";
-            mail.Body = "Teste de geração DAS automatico";
-            Attachment attachment = new Attachment(@"C:\Users\fabio\Downloads\"  + arquivoDAS);
-            mail.Attachments.Add(attachment);
+                mail.From = new MailAddress("fabioesimoes@outlook.com");
+                mail.To.Add("aleribeiro@outlook.com");
+                mail.To.Add("fabioesimoes@gmail.com");
+                mail.To.Add("gilvan@asctbinf.com");
+
+                //define o conteúdo
+                mail.Subject = "Envio de DAS";
+                mail.Body = "Teste de geração DAS automatico";
+                Attachment attachment = new Attachment(@"C:\Users\fabio\Downloads\" + arquivoDAS);
+                mail.Attachments.Add(attachment);
 
 
-            //envia a mensagem
-            SmtpClient smtp = new SmtpClient();
-            smtp.Host = "smtp-mail.outlook.com";
-            smtp.UseDefaultCredentials = true;
-            smtp.EnableSsl = true;
-            smtp.Port = 587;
-            //smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-            smtp.Credentials = new NetworkCredential("fabioesimoes@outlook.com", "erivelto33");
-            smtp.Send(mail);
+                //envia a mensagem
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "smtp-mail.outlook.com";
+                smtp.UseDefaultCredentials = true;
+                smtp.EnableSsl = true;
+                smtp.Port = 587;
+                //smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.Credentials = new NetworkCredential("fabioesimoes@outlook.com", "erivelto33");
+                smtp.Send(mail);
+            }
 
             //var client = new SmtpClient("smtp.gmail.com", 587)
             //{
